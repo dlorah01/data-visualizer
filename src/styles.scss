@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --blue-whale: #042940;
+  --blue-stone: #005C53;
+  --atlantis: #9FC131;
+  --golden-dream: #DBF227;
+  --winter-hazel: #D6D58E;
+  --black-space: #00040f;
+  --white-space: #f8f8fa;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--blue-whale);
+  color: var(--white-space);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

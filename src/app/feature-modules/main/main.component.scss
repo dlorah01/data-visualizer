@@ -1,0 +1,18 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+app-topnav {
+  width: 100%;
+}
+.visual-container {
+  flex: 1;
+  width: 100%;
+}
+
+app-footer {
+  width: 100%;
+}

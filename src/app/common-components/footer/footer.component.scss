@@ -1,0 +1,33 @@
+.footer {
+  position: relative;
+  background-color: var(--black-space);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 40px;
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    width: 90%;
+
+    .footer-item {
+      font-size: 12px;
+
+      .footer-link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 500;
+      }
+
+      .footer-link:hover {
+        color: var(--golden-dream)
+      }
+
+    }
+  }
+}

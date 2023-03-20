@@ -1,0 +1,21 @@
+<div class="controls-container">
+  <div class="control-item">
+    <div class="content-select">
+      <select #algorithm (change)="onChange(algorithm)">
+        <option default value="Bubble">Bubble Sorting</option>
+        <option value="Selection">Selection Sorting</option>
+        <option value="Insertion">Insertion Sorting</option>
+      </select>
+      <i></i>
+    </div>
+  </div>
+  <div class="control-item">
+    <a class="control-button" (click)="sortArray()">Start Sorting</a>
+  </div>
+  <div class="control-item">
+    <a class="control-button" (click)="resetArray()">Reset</a>
+  </div>
+  <div class="control-item">
+    <a class="control-button" (click)="generateArray()">Generate</a>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="sorting-container">
+  <div class="array-container">
+    <ng-container *ngFor="let item of numbersArray">
+      <div class="array-item" [ngClass]="{'selected': item.selected, 'sorted': item.sorted}" style.height = "{{item.value}}%">
+      </div>
+    </ng-container>
+  </div>
+  <button (click)="sort()"></button>
+  <app-sorting-controls
+    (emitAlgorithm)="emitAlgorithmSelection($event)"
+    (emitGenerate)="createNumbesArray()"
+    (emitReset)="resetArray()"
+    (emitSort)="sort()"
+    ></app-sorting-controls>
+</div>
