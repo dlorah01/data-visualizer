@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('../sorting/sorting.module').then((m) => m.SortingModule)
       },
       {
+        path: 'tree',
+        loadChildren: () => import('../tree/tree.module').then((m) => m.TreeModule)
+      },
+      {
         path: '',
         redirectTo: 'sorting',
         pathMatch: 'full'

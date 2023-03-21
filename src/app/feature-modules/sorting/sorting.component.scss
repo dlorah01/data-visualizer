@@ -17,7 +17,6 @@
     .array-item {
       width: 40px;
       background-color: var(--winter-hazel);
-      // border: 3px solid #fff;
       border-radius: 5px;
     }
 
@@ -29,6 +28,9 @@
       background-color: var(--blue-stone);
     }
 
+    .array-item.pivot {
+      background-color: var(--white-space);
+    }
 
   }
 }

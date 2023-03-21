@@ -9,12 +9,6 @@
   border-radius: 5px;
 
   .control-item {
-    select{
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-
     .content-select{
       width: 250px;
       position: relative;
@@ -55,6 +49,11 @@
         transform: rotate(-45deg);
         transition: all 0.25s ease;
       }
+
+      select.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
     }
 
     .control-button {
@@ -69,6 +68,11 @@
 
     .control-button:hover, .control-button.active {
       background-color: var(--blue-stone);
+    }
+
+    .control-button.disabled {
+      pointer-events: none;
+      opacity: 0.5;
     }
   }
 }

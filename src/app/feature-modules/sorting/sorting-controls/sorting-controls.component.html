@@ -1,21 +1,23 @@
 <div class="controls-container">
   <div class="control-item">
     <div class="content-select">
-      <select #algorithm (change)="onChange(algorithm)">
+      <select #algorithm (change)="onChange(algorithm)" [ngClass]="{'disabled': runningState}">
         <option default value="Bubble">Bubble Sorting</option>
         <option value="Selection">Selection Sorting</option>
         <option value="Insertion">Insertion Sorting</option>
+        <option value="Quick">Quick Sorting</option>
+        <!-- <option value="Merge">Merge Sorting</option> -->
       </select>
       <i></i>
     </div>
   </div>
   <div class="control-item">
-    <a class="control-button" (click)="sortArray()">Start Sorting</a>
+    <a class="control-button" [ngClass]="{'disabled': runningState || sortedState}" (click)="sortArray()">Start Sorting</a>
   </div>
   <div class="control-item">
-    <a class="control-button" (click)="resetArray()">Reset</a>
+    <a class="control-button" [ngClass]="{'disabled': runningState}" (click)="resetArray()">Reset</a>
   </div>
   <div class="control-item">
-    <a class="control-button" (click)="generateArray()">Generate</a>
+    <a class="control-button" [ngClass]="{'disabled': runningState}" (click)="generateArray()">Generate</a>
   </div>
 </div>

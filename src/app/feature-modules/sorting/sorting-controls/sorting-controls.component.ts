@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-sorting-controls',
@@ -10,9 +10,12 @@ export class SortingControlsComponent {
   @Output() emitGenerate: EventEmitter<void> = new EventEmitter<void>()
   @Output() emitReset: EventEmitter<void> = new EventEmitter<void>()
   @Output() emitSort: EventEmitter<void> = new EventEmitter<void>()
+  @Input() runningState!: boolean | null
+  @Input() sortedState!: boolean | null
+
   constructor() {}
 
-  onChange(selection: HTMLSelectElement): void {
+ onChange(selection: HTMLSelectElement): void {
     this.emitAlgorithm.emit(selection.value)
   }
 

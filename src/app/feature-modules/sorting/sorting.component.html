@@ -5,11 +5,12 @@
       </div>
     </ng-container>
   </div>
-  <button (click)="sort()"></button>
   <app-sorting-controls
     (emitAlgorithm)="emitAlgorithmSelection($event)"
     (emitGenerate)="createNumbesArray()"
     (emitReset)="resetArray()"
     (emitSort)="sort()"
+    [runningState]="runningState"
+    [sortedState]="sortedState"
     ></app-sorting-controls>
 </div>
