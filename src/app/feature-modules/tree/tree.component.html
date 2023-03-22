@@ -1,3 +1,15 @@
 <div class="tree-container">
-  Coming Soon
+  <div class="nodes-container">
+    <ng-container *ngFor="let item of numbersArray">
+      <div class="tree-node" [id]="item.id" #reference> {{item.value}} </div>
+    </ng-container>
+  </div>
+  <app-tree-controls
+    (emitTraversal)="emitTraversalSelection($event)"
+    (emitGenerate)="createNumbesArray()"
+    (emitReset)="resetArray()"
+    (emitTraverse)="traverse()"
+    [runningState]="runningState"
+    [traversedState]="traversedState"
+    ></app-tree-controls>
 </div>

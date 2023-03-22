@@ -4,7 +4,62 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 20px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 72px;
+  row-gap: 40px;
+
+  .nodes-container {
+    width: 1100px;
+    height: 350px;
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+
+
+    .tree-node {
+      width: 80px;
+      height: 80px;
+      border-radius: 80px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--winter-hazel);
+      position: absolute;
+      color: var(--black-space);
+
+      &#node-0 {
+        top: 0;
+        left: calc(50% - 25px);
+      }
+
+      &#node-1 {
+        top: 120px;
+        left: calc(50% - 200px);
+      }
+
+      &#node-2 {
+        top: 120px;
+        left: calc(50%  + 150px);
+      }
+
+      &#node-3 {
+        top: 240px;
+        left: calc(50% - 325px);
+      }
+
+      &#node-4 {
+        top: 240px;
+        left: calc(50%  - 75px);
+      }
+
+      &#node-5 {
+        top: 240px;
+        left: calc(50% + 25px);
+      }
+
+      &#node-6 {
+        top: 240px;
+        left: calc(50%  + 275px);
+      }
+    }
+  }
 }

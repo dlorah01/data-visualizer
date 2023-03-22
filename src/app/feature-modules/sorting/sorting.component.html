@@ -1,7 +1,12 @@
 <div class="sorting-container">
   <div class="array-container">
     <ng-container *ngFor="let item of numbersArray">
-      <div class="array-item" [ngClass]="{'selected': item.selected, 'sorted': item.sorted}" style.height = "{{item.value}}%">
+      <div class="array-item-wrapper">
+        <div class="array-item-value">
+          {{item.value}}
+        </div>
+        <div class="array-item" [ngClass]="{'selected': item.selected, 'sorted': item.sorted}" style.height = "{{item.value}}%">
+        </div>
       </div>
     </ng-container>
   </div>

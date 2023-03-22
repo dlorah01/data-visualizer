@@ -1,0 +1,21 @@
+<div class="controls-container">
+  <div class="control-item">
+    <div class="content-select">
+      <select #algorithm (change)="onChange(algorithm)" [ngClass]="{'disabled': runningState}">
+        <option default value="PostOrder">DFS Post Order</option>
+        <option value="InOrder">DFS In Order</option>
+        <option value="PreOrder">DFS Pre Order</option>
+      </select>
+      <i></i>
+    </div>
+  </div>
+  <div class="control-item">
+    <a class="control-button" [ngClass]="{'disabled': runningState || traversedState}" (click)="traverseArray()">Start Traversing</a>
+  </div>
+  <div class="control-item">
+    <a class="control-button" [ngClass]="{'disabled': runningState}" (click)="resetArray()">Reset</a>
+  </div>
+  <div class="control-item">
+    <a class="control-button" [ngClass]="{'disabled': runningState}" (click)="generateArray()">Generate</a>
+  </div>
+</div>

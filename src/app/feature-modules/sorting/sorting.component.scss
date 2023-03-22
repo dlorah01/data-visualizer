@@ -4,32 +4,48 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 20px;
+  row-gap: 40px;
 
   .array-container {
-    width: 90%;
-    height: 50%;
+    width: 1100px;
+    height: 70%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     column-gap: 10px;
 
-    .array-item {
+    .array-item-wrapper {
+      height: 100%;
+      display: flex;
       width: 40px;
-      background-color: var(--winter-hazel);
-      border-radius: 5px;
-    }
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      row-gap: 5px;
 
-    .array-item.sorted {
-      background-color: var(--golden-dream);
-    }
+      .array-item-value {
+        font-family: 'Bebas Neue', sans-serif;
+        text-align: center;
+        font-size: 24px;
+      }
 
-    .array-item.selected {
-      background-color: var(--blue-stone);
-    }
+      .array-item {
+        width: 40px;
+        background-color: var(--winter-hazel);
+        border-radius: 5px;
+      }
 
-    .array-item.pivot {
-      background-color: var(--white-space);
+      .array-item.sorted {
+        background-color: var(--golden-dream);
+      }
+
+      .array-item.selected {
+        background-color: var(--blue-stone);
+      }
+
+      .array-item.pivot {
+        background-color: var(--white-space);
+      }
     }
 
   }
