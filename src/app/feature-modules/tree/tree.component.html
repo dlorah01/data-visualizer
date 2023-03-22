@@ -1,8 +1,17 @@
 <div class="tree-container">
   <div class="nodes-container">
     <ng-container *ngFor="let item of numbersArray">
-      <div class="tree-node" [id]="item.id" #reference> {{item.value}} </div>
+      <div class="tree-node" [id]="item.id" [ngClass]="{'selected': item.selected, 'traversed': item.traversed}" #reference> {{item.value}} </div>
     </ng-container>
+  </div>
+  <div class="visited-container">
+    <div class="visited-array">
+      <div class="visited-wrapper">
+        <ng-container *ngFor="let item of visitedArray">
+          <div class="tree-node" [id]="item.id"> {{item.value}} </div>
+        </ng-container>
+      </div>
+    </div>
   </div>
   <app-tree-controls
     (emitTraversal)="emitTraversalSelection($event)"

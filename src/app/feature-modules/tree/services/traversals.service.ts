@@ -14,25 +14,25 @@ export class TraversalsService {
 
   constructor() {}
 
-  async dfsInOrder(arr: NodeTree[]): Promise<void> {
+  async dfsInOrder(arr: NodeTree[], data: NodeTree[]): Promise<void> {
     this.change(true, 'running')
-    dfsInOrder(arr).then(() => {
+    dfsInOrder(arr, data).then(() => {
       this.change(false, 'running')
       this.change(true, 'traversed')
     })
   }
 
-  async dfsPostOrder(arr: NodeTree[]): Promise<void> {
+  async dfsPostOrder(arr: NodeTree[], data: NodeTree[]): Promise<void> {
     this.change(true, 'running')
-    dfsPostOrder(arr).then(() => {
+    dfsPostOrder(arr, data).then(() => {
       this.change(false, 'running')
       this.change(true, 'traversed')
     })
   }
 
-  async dfsPreOrder(arr: NodeTree[]): Promise<void> {
+  async dfsPreOrder(arr: NodeTree[], data: NodeTree[]): Promise<void> {
     this.change(true, 'running')
-    dfsPreOrder(arr).then(() => {
+    dfsPreOrder(arr, data).then(() => {
       this.change(false, 'running')
       this.change(true, 'traversed')
     })

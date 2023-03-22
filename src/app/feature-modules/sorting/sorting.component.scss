@@ -33,18 +33,14 @@
         width: 40px;
         background-color: var(--winter-hazel);
         border-radius: 5px;
-      }
 
-      .array-item.sorted {
-        background-color: var(--golden-dream);
-      }
+        &.sorted {
+          background-color: var(--golden-dream);
+        }
 
-      .array-item.selected {
-        background-color: var(--blue-stone);
-      }
-
-      .array-item.pivot {
-        background-color: var(--white-space);
+        &.selected {
+          background-color: var(--blue-stone);
+        }
       }
     }
 

@@ -12,16 +12,21 @@ export class TreeComponent implements AfterViewInit, OnDestroy{
   @ViewChildren('reference') reference!: QueryList<ElementRef<HTMLElement>>;
   linesArray: any[] = []
   numbersArray!: NodeTree[]
-  backupArray!: NodeTree[]
+  visitedArray!: NodeTree[]
   traversalSelected = 'PostOrder'
   runningState = false
   traversedState = false
 
   constructor(private traversalsService: TraversalsService){
     this.createNumbesArray()
+    this.traversalsService.runningState.subscribe((state: boolean) => {
+      this.runningState = state
+    })
+    this.traversalsService.traversedState.subscribe((state: boolean) => {
+      this.traversedState = state
+    })
   }
   ngOnDestroy(): void {
-    console.log(this.linesArray)
     for (let index = 0; index < this.linesArray.length; index++) {
       this.linesArray[index].remove()
 
@@ -50,7 +55,9 @@ export class TreeComponent implements AfterViewInit, OnDestroy{
         id: `node-${index}`,
         value: Math.floor(Math.random() * 100) + 1,
         selected: false,
-        sorted: false
+        traversed: false,
+        left: ((2 * index) + 1) < arr.length ? ((2 * index) + 1) : -1,
+        right: ((2 * index) + 2) < arr.length ? ((2 * index) + 2) : -1
       }
     }
     return arr
@@ -59,15 +66,15 @@ export class TreeComponent implements AfterViewInit, OnDestroy{
   async traverse(): Promise<void> {
     switch (this.traversalSelected) {
       case 'InOrder': {
-        this.traversalsService.dfsInOrder(this.numbersArray)
+        this.traversalsService.dfsInOrder(this.numbersArray, this.visitedArray)
         break
       }
       case 'PreOrder': {
-        this.traversalsService.dfsPreOrder(this.numbersArray)
+        this.traversalsService.dfsPreOrder(this.numbersArray, this.visitedArray)
         break
       }
       default: {
-        this.traversalsService.dfsPostOrder(this.numbersArray)
+        this.traversalsService.dfsPostOrder(this.numbersArray, this.visitedArray)
       }
 
     }
@@ -81,14 +88,14 @@ export class TreeComponent implements AfterViewInit, OnDestroy{
 
   createNumbesArray(): void {
     this.numbersArray = this.generateArray()
-    this. backupArray = [...this.numbersArray]
+    this. visitedArray = []
     this.traversalsService.change(false, 'traversed')
   }
 
   resetArray(): void {
-    this.numbersArray = [...this.backupArray]
+    this.visitedArray = []
     this.numbersArray.forEach((x: NodeTree) => {
-      x.sorted = false
+      x.traversed = false
       x.selected = false
     })
     this.traversalsService.change(false, 'traversed')
